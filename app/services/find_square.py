@@ -3,14 +3,16 @@
 
 import sys
 
-def find_square(file_name):
+def get_matrix(file_name):
     with open(file_name,'r', encoding='utf-16-le') as reader:
         first_line = reader.readline() 
-        matrix = [[num for num in line if num != '\n'] for line in reader]
-        
+        return [[num for num in line if num != '\n'] for line in reader], first_line
+
+
+def find_square(matrix, first_line):
     solution = get_solution(matrix, int(first_line[1]), first_line[2], first_line[3], first_line[4])
     
-    return update_matrix(matrix, get_best_solution(matrix, solution), first_line[4])
+    return update_matrix(matrix, get_best_solution(solution), first_line[4])
         
 
 
@@ -43,7 +45,7 @@ def update_matrix(matrix, solution, full_caractere):
 
     return matrix
 
-def get_best_solution(matrix, matrix_solution):
+def get_best_solution(matrix_solution):
     #get the biggest value
     bigest_carre = (0,0,0)
 
@@ -72,6 +74,8 @@ if __name__ == '__main__' :
     if len(sys.argv) < 2:
         print('Missing parameters.')
         exit()
-    square = find_square(*sys.argv[1:2])
+    matrix, first_line = get_matrix(*sys.argv[1:2])
+
+    square = find_square(matrix, first_line)
 
     display_solution(square)
