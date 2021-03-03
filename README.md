@@ -1,8 +1,16 @@
 # Le grand carré
 
+This program help you to find the bigest "le grand carré" in a Matrix.
+
+### Lunch the program
+
 `python run.py`
 
+With curl, you can execute this command after uploading your matrix file in app/map_gen_files directory :
+
 `curl localhost:5000/exemple.txt`
+
+Or with command line : 
 
 `python app\services\find_square.py  app\map_gen_files\exemple.txt`
 
