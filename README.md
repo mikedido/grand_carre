@@ -2,6 +2,10 @@
 
 This program help you to find the bigest "le grand carré" in a Matrix.
 
+
+### Install the dependencies
+
+`pip3 install -r requirements.txt`
 ### Lunch the program
 
 `python run.py`
