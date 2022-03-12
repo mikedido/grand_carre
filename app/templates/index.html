@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Grand carre</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/index.css') }}">
+    <script src="{{ url_for('static',filename='js/index.js') }}"></script>
+</head>
+<body>
+    <div class="right">
+        <div class='description'>
+            <h1>Welcome GRAND CARRE</h1>
+            <br/><br/>
+            <p>Placer les obstacles X dans les colonnes de votre choix</p>
+            <p>Le but de cette algorithme est de trouver le grand carre dans la grille en évitant les obsacles que vous allez mettre.</p>
+        </div>
+    </div>
+
+    <div class="left">
+
+        <table id="grid">
+            <tr>
+              <td><input id="cell-0"  type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+              <td><input id="cell-1"  type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+              <td><input id="cell-2"  type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+              <td><input id="cell-3"  type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+              <td><input id="cell-4"  type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+              <td><input id="cell-5"  type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+              
+              <td><input id="cell-6"  type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+              <td><input id="cell-7"  type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+              <td><input id="cell-8"  type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+              <td><input id="cell-9"  type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+              <td><input id="cell-10" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+              <td><input id="cell-11" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+            
+            </tr>
+            
+            <tr>
+              <td><input id="cell-12" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+              <td><input id="cell-13" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+              <td><input id="cell-14" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+              <td><input id="cell-15" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+              <td><input id="cell-16" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+              <td><input id="cell-17" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+            
+              <td><input id="cell-18" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+              <td><input id="cell-19" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+              <td><input id="cell-20" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+              <td><input id="cell-21" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+              <td><input id="cell-22" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td> 
+              <td><input id="cell-23" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+              
+            </tr>
+            <tr>
+              
+              <td><input id="cell-24" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+              <td><input id="cell-25" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+              <td><input id="cell-26" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+              <td><input id="cell-27" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+              <td><input id="cell-28" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+              
+              <td><input id="cell-29" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+              <td><input id="cell-30" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+              <td><input id="cell-31" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+              <td><input id="cell-32" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+              <td><input id="cell-33" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+              <td><input id="cell-34" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+              <td><input id="cell-35" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                 
+            </tr>
+        
+            <tr>
+              <td><input id="cell-36" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+              <td><input id="cell-37" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+              <td><input id="cell-38" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+              <td><input id="cell-39" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+        
+              <td><input id="cell-40" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+              <td><input id="cell-41" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+              <td><input id="cell-42" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+              <td><input id="cell-43" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+              <td><input id="cell-44" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+              <td><input id="cell-45" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+              <td><input id="cell-46" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+              <td><input id="cell-47" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+            </tr>
+        
+            <tr>
+                <td><input id="cell-48" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-49" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-50" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-51" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+          
+                <td><input id="cell-52" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-53" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-54" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-55" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-56" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-57" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-58" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-59" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+              </tr>
+        
+              <tr>
+                <td><input id="cell-60" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-61" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-62" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-63" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+          
+                <td><input id="cell-64" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-65" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-66" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-67" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-68" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-69" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-70" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-71" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+              </tr>
+        
+              <tr>
+                <td><input id="cell-72" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-73" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-74" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-75" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+          
+                <td><input id="cell-76" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-77" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-78" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-79" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-80" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-81" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-82" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-83" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+              </tr>
+        
+              <tr>
+                <td><input id="cell-84" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-85" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-86" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-87" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+          
+                <td><input id="cell-88" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-89" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-90" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-91" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-92" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-93" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-94" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-95" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+              </tr>
+        
+              <tr>
+                <td><input id="cell-96" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-97" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-98" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-99" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+          
+                <td><input id="cell-100" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-101" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-102" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-103" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-104" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-105" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-106" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-107" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+              </tr>
+        
+              <tr>
+                <td><input id="cell-108" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-109" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-110" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-111" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+          
+                <td><input id="cell-112" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-113" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-114" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-115" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-116" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-117" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-118" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-119" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+              </tr>
+        
+              <tr>
+                <td><input id="cell-120" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-121" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-122" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-123" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+          
+                <td><input id="cell-124" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-125" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-126" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-127" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-128" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-129" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-130" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-131" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+              </tr>
+        
+              <tr>
+                <td><input id="cell-132" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-133" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-134" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-135" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+          
+                <td><input id="cell-136" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-137" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-138" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-139" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-140" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-141" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-142" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+                <td><input id="cell-143" type="text" minlength="0" maxlength="1" onkeydown="return isNumeric(event, id)"></td>
+              </tr>
+          </table>
+        
+          <!--<h2 id="timer">Time : 0.00</h2>-->
+          <p id="message-error"></p>
+          <a id="btn-clear" onClick="clearGrid()" class="btn btn-primary  active" role="button" aria-pressed="true">Clear</a>
+          <a id="btn-resolve" onClick="main()" class="btn btn-primary  active" role="button" aria-pressed="true">Find</a>
+    </div>
+   
+</body>
+</html>
