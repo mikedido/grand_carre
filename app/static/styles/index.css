@@ -1,0 +1,66 @@
+html, body {
+    background-color: #FAFAFA
+  }
+  
+  table {
+    border: 2px solid #000000;
+  }
+  
+  td {
+    border: 1px solid #000000;
+    text-align: center;
+    vertical-align: middle;  
+  }
+  
+  input {
+    color: #000000;
+    padding: 0;
+    border: 0;
+    text-align: center;
+    width: 48px;
+    height: 48px;
+    font-size: 24px;
+    background-color: #FFFFFF;
+    outline: none;
+  }
+  
+  input:disabled {
+    background-color: #EEEEEE;
+  }
+  
+  .error {
+    background-color: red;
+    color: white;
+  }
+  
+  .cell-fill {
+    background-color: #E8E8E8;
+  }
+
+  .cell-fill-green {
+    background-color: #2d744a;
+  }
+
+  .right {
+    background-color:red;
+    width:50%;
+    float:right;
+  }
+
+  .left {
+    background-color:Yellow;
+    width:50%;
+    float:left;
+    text-align: center;
+  }
+
+  table {
+    margin-top : 30px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .description {
+    margin: 50px 30px 30px 30px;
+    text-align: center;
+  }
