@@ -29,7 +29,7 @@ class Square:
         while test_number < min((len(self.matrix) - i), (len(self.matrix[0]) - j)):
             for line in range(i, i + test_number) :
                 for column in range(j, j + test_number) :
-                    if self.obstacle_caractere == self.matrix[line][column]:
+                    if self.obstacle_caractere == self.matrix[line][column] :
                         return (i, j, test_number-1)
             test_number += 1
 
