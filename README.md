@@ -1,44 +1,102 @@
-# Le grand carré
+# Le grand carré (The big square)
 
 This program help you to find the bigest "le grand carré" in a Matrix.
 
+<img src="pictures/image-merged.png" >
 
-### Install the dependencies
+
+# Install the dependencies
 
 `pip3 install -r requirements.txt`
-### Lunch the program
 
-`python run.py`
+# Lunch the program
 
-With curl, you can execute this command after uploading your matrix file in app/map_gen_files directory :
+## With docker
 
-`curl localhost:5000/exemple.txt`
-
-Or with command line : 
-
-`python app\services\find_square.py  app\map_gen_files\exemple.txt`
-
+`python3 run.py`
 ### Build the image`
 
-`docker build -t my-image-name .`
+`docker build -t square .`
 
 ### Lunch the docker
 
-`docker run -d -p 1337:80 my-image-name
+`docker run -d -p 5000:5000 square`
 
-### Map genretor
+## With local programming environment
 
-`python3 app/services/map_generator.py n o x y> app/map_gen_files/filename`
+Create an env directory :
 
-– N => Le nombre de lignes du plateau ;
-– O => Le caractère "vide" ;
-– x => Le caractère "obstacle" ;
-– Y => Le caractère "plein".
+```
+mkdir env
+cd env
+```
 
-### Get the solution
+Create the env :
 
-`python3 app/services/find_square.py app/map_gen_files/filename`
+```
+python3 -m venv env
+```
 
-or 
+Activate the env : 
 
-`curl -X GET localhost:5000/filename`
+```
+source my_env/bin/activate 
+```
+
+# Algorithme
+
+To find the big square in the matrix, we apply the folow algo :
+
+1. For each case/point find the big square 
+2. Return the bigest square of all the case/point
+
+## The square of point 
+
+```python
+
+def get_square_by_point(self, i, j):
+        """
+        Return a square by point(i, j)
+        """
+        test_number = 0
+        
+        while test_number < min((len(self.matrix) - i), (len(self.matrix[0]) - j)):
+            for line in range(i, i + test_number) :
+                for column in range(j, j + test_number) :
+                    if self.obstacle_caractere == self.matrix[line][column] :
+                        return (i, j, test_number-1)
+            test_number += 1
+
+        return (i, j, test_number)
+
+```
+
+### Get the bigest square 
+
+Return the bigest dimension in the list of all tuple(row, column, dimension) solution.
+
+```python
+
+def get_big_square(self, matrix_solution):
+        #get the biggest value
+        bigest_carre = (0,0,0)
+
+        for solution in matrix_solution:
+            if solution is not None :
+                if solution[2] == bigest_carre[2] :
+                    if solution[0] < bigest_carre[0]:
+                        bigest_carre = solution
+                    elif solution[1] < bigest_carre[1]:
+                        bigest_carre = solution
+                elif solution[2] > bigest_carre[2] :
+                    bigest_carre = solution
+
+        return bigest_carre
+
+```
+
+## Testing : 
+
+```
+make test
+```
