@@ -42,13 +42,11 @@ html, body {
   }
 
   .right {
-    background-color:red;
     width:50%;
     float:right;
   }
 
   .left {
-    background-color:Yellow;
     width:50%;
     float:left;
     text-align: center;
